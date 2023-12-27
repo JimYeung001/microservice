@@ -1,6 +1,6 @@
 package com.eazy.accounts.service;
 
-import com.eazy.accounts.dto.CustomerDto;
+import com.eazy.core.dto.CustomerDto;
 
 public interface IAccountsService {
 	/**

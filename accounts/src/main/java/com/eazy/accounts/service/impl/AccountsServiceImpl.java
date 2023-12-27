@@ -1,24 +1,23 @@
 package com.eazy.accounts.service.impl;
 
-import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eazy.accounts.constants.AccountsConstants;
-import com.eazy.accounts.dto.AccountsDto;
-import com.eazy.accounts.dto.CustomerDto;
-import com.eazy.accounts.entity.Accounts;
-import com.eazy.accounts.entity.Customer;
 import com.eazy.accounts.exception.CustomerAlreadyExistsException;
 import com.eazy.accounts.exception.ResourceNotFoundException;
-import com.eazy.accounts.mapper.AccountsMapper;
-import com.eazy.accounts.mapper.CustomerMapper;
-import com.eazy.accounts.repository.AccountsRepository;
-import com.eazy.accounts.repository.CustomerRepository;
 import com.eazy.accounts.service.IAccountsService;
+import com.eazy.core.constants.ApplicationConstants;
+import com.eazy.core.dto.AccountsDto;
+import com.eazy.core.dto.CustomerDto;
+import com.eazy.core.entities.accounts.Accounts;
+import com.eazy.core.entities.accounts.Customer;
+import com.eazy.core.mapper.AccountsMapper;
+import com.eazy.core.mapper.CustomerMapper;
+import com.eazy.core.repositories.AccountsRepository;
+import com.eazy.core.repositories.CustomerRepository;
 
 import lombok.AllArgsConstructor;
 
@@ -49,8 +48,8 @@ public class AccountsServiceImpl implements IAccountsService {
 		newAccounts.setCustomerId(savedCustomer.getCustomerId());
 		long accNumber = 10000000000L + new Random().nextInt(900000000);
 		newAccounts.setAccountNumber(accNumber);
-		newAccounts.setAccountType(AccountsConstants.SAVINGS);
-		newAccounts.setBranchAddress(AccountsConstants.ADDRESS);
+		newAccounts.setAccountType(ApplicationConstants.SAVINGS);
+		newAccounts.setBranchAddress(ApplicationConstants.ADDRESS);
 		return newAccounts;
 	}
 

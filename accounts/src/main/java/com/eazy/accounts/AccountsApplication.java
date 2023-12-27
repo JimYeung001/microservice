@@ -2,7 +2,10 @@ package com.eazy.accounts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -26,6 +29,9 @@ import io.swagger.v3.oas.annotations.info.License;
 						)
 				)
 		)
+@ComponentScan({"com.eazy.accounts","com.eazy.core"})
+@EnableJpaRepositories("com.eazy.core")
+@EntityScan("com.eazy.core")
 public class AccountsApplication {
 
 	public static void main(String[] args) {

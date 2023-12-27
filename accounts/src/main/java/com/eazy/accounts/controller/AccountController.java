@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.eazy.accounts.constants.AccountsConstants;
-import com.eazy.accounts.dto.CustomerDto;
-import com.eazy.accounts.dto.ErrorResponseDto;
-import com.eazy.accounts.dto.ResponseDto;
 import com.eazy.accounts.service.IAccountsService;
+import com.eazy.core.constants.ApplicationConstants;
+import com.eazy.core.dto.CustomerDto;
+import com.eazy.core.dto.ErrorResponseDto;
+import com.eazy.core.dto.ResponseDto;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -44,7 +44,7 @@ public class AccountController {
 	public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
 		iAccountsService.createAccount(customerDto);
 		return ResponseEntity.status(HttpStatus.CREATED)
-				.body(new ResponseDto(AccountsConstants.STATUS_201, AccountsConstants.MESSAGE_201));
+				.body(new ResponseDto(ApplicationConstants.STATUS_201, ApplicationConstants.MESSAGE_201));
 	}
 
 	@Operation(summary = "Fetch accounts", description = "REST API to fetch existing Customer Account in Eazy")
@@ -64,10 +64,10 @@ public class AccountController {
 		boolean isUpdatedSuccessfull = iAccountsService.updateAccount(customerDto);
 		if (isUpdatedSuccessfull) {
 			return ResponseEntity.status(HttpStatus.OK)
-					.body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
+					.body(new ResponseDto(ApplicationConstants.STATUS_200, ApplicationConstants.MESSAGE_200));
 		} else {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
-					.body(new ResponseDto(AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_UPDATE));
+					.body(new ResponseDto(ApplicationConstants.STATUS_417, ApplicationConstants.MESSAGE_417_UPDATE));
 		}
 	}
 
@@ -80,10 +80,10 @@ public class AccountController {
 		boolean isDeleted = iAccountsService.deleteAccount(mobileNumber);
 		if (isDeleted) {
 			return ResponseEntity.status(HttpStatus.OK)
-					.body(new ResponseDto(AccountsConstants.STATUS_200, AccountsConstants.MESSAGE_200));
+					.body(new ResponseDto(ApplicationConstants.STATUS_200, ApplicationConstants.MESSAGE_200));
 		} else {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
-					.body(new ResponseDto(AccountsConstants.STATUS_417, AccountsConstants.MESSAGE_417_DELETE));
+					.body(new ResponseDto(ApplicationConstants.STATUS_417, ApplicationConstants.MESSAGE_417_DELETE));
 		}
 	}
 }
