@@ -13,8 +13,13 @@
 
 	<groupId>com.eazy</groupId>
 	<artifactId>Microservice</artifactId>
-	<version>1.0.0</version>
+	<version>${revision}</version>
 	<packaging>pom</packaging>
+
+	<properties>
+		<java.version>17</java.version>
+		<revision>1.0.0</revision>
+	</properties>
 
 	<modules>
 		<module>core</module>

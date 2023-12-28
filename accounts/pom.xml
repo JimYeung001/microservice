@@ -7,16 +7,11 @@
 	<parent>
 		<groupId>com.eazy</groupId>
 		<artifactId>Microservice</artifactId>
-		<version>1.0.0</version>
+		<version>${revision}</version>
 	</parent>
 	<artifactId>accounts</artifactId>
-	<version>${parent.version}</version>
 	<name>accounts</name>
 	<description>Microservice for accounts</description>
-	<properties>
-		<java.version>17</java.version>
-		<core.version>1.0.0</core.version>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -65,7 +60,7 @@
 		<dependency>
 			<groupId>com.eazy</groupId>
 			<artifactId>com.eazy.core</artifactId>
-			<version>${core.version}</version>
+			<version>${revision}</version>
 		</dependency>
 	</dependencies>
 
