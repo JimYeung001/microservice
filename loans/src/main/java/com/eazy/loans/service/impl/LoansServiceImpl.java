@@ -11,7 +11,7 @@ import com.eazy.core.dto.LoansDto;
 import com.eazy.core.entities.accounts.Accounts;
 import com.eazy.core.entities.accounts.Customer;
 import com.eazy.core.entities.loans.Loans;
-import com.eazy.core.exception.CustomerAlreadyExistsException;
+import com.eazy.core.exception.LoanAlreadyExistsException;
 import com.eazy.core.exception.ResourceNotFoundException;
 import com.eazy.core.mapper.LoansMapper;
 import com.eazy.core.repositories.AccountsRepository;
@@ -38,20 +38,22 @@ public class LoansServiceImpl implements ILoansService {
 		Loans loan = LoansMapper.mapToLoans(loansDto, new Loans());
 		Optional<Loans> optLoan = loansRepository.findByMobileNumber(loan.getMobileNumber());
 		if (optLoan.isPresent()) {
-			throw new CustomerAlreadyExistsException(
-					"Customer already registered with given mobile number " + optLoan.get().getMobileNumber());
+			throw new LoanAlreadyExistsException(
+					"Loan already registered with given mobile number " + optLoan.get().getMobileNumber());
 		}
-		loansRepository.save(loan);
+		loansRepository.save(createNewLoans(loan.getMobileNumber()));
 	}
 
-	private Accounts createNewAccounts(Customer savedCustomer) {
-		Accounts newAccounts = new Accounts();
-		newAccounts.setCustomerId(savedCustomer.getCustomerId());
-		long accNumber = 10000000000L + new Random().nextInt(900000000);
-		newAccounts.setAccountNumber(accNumber);
-		newAccounts.setAccountType(ApplicationConstants.SAVINGS);
-		newAccounts.setBranchAddress(ApplicationConstants.ADDRESS);
-		return newAccounts;
+	private Loans createNewLoans(String mobileNumber) {
+		Loans loan = new Loans();
+		long accNumber = 100000000000L + new Random().nextInt(900000000);
+		loan.setLoanNumber(Long.toString(accNumber));
+		loan.setMobileNumber(mobileNumber);
+		loan.setLoanType(ApplicationConstants.HOME_LOAN);
+		loan.setAmountPaid(0);
+		loan.setOutstandingAmount(ApplicationConstants.NEW_LOAN_LIMIT);
+		loan.setTotalLoan(ApplicationConstants.NEW_LOAN_LIMIT);
+		return loan;
 	}
 
 	@Override
@@ -59,16 +61,15 @@ public class LoansServiceImpl implements ILoansService {
 		Loans loan = loansRepository.findByMobileNumber(mobileNumber)
 				.orElseThrow(() -> new ResourceNotFoundException("Loan", "Mobile Number", mobileNumber));
 
-		LoansDto loansDto = LoansMapper.mapToLoansDto(loan, new LoansDto());
-		return loansDto;
+		return LoansMapper.mapToLoansDto(loan, new LoansDto());
 	}
 
 	@Override
 	public boolean updateLoan(LoansDto loansDto) {
 		boolean isUpdated = false;
 		if (null != loansDto) {
-			Loans loan = loansRepository.findByMobileNumber(loansDto.getMobileNumber()).orElseThrow(
-					() -> new ResourceNotFoundException("Loan", "mobile Number", loansDto.getMobileNumber()));
+			Loans loan = loansRepository.findByLoanNumber(loansDto.getLoanNumber()).orElseThrow(
+					() -> new ResourceNotFoundException("Loan", "loan Number", loansDto.getLoanNumber()));
 			LoansMapper.mapToLoans(loansDto, loan);
 			loansRepository.save(loan);
 			isUpdated = true;
