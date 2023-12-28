@@ -6,14 +6,14 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.eazy.accounts.exception.CustomerAlreadyExistsException;
-import com.eazy.accounts.exception.ResourceNotFoundException;
 import com.eazy.accounts.service.IAccountsService;
 import com.eazy.core.constants.ApplicationConstants;
 import com.eazy.core.dto.AccountsDto;
 import com.eazy.core.dto.CustomerDto;
 import com.eazy.core.entities.accounts.Accounts;
 import com.eazy.core.entities.accounts.Customer;
+import com.eazy.core.exception.CustomerAlreadyExistsException;
+import com.eazy.core.exception.ResourceNotFoundException;
 import com.eazy.core.mapper.AccountsMapper;
 import com.eazy.core.mapper.CustomerMapper;
 import com.eazy.core.repositories.AccountsRepository;

@@ -1,4 +1,4 @@
-package com.eazy.accounts.exception;
+package com.eazy.core.exception;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.eazy.accounts.exception;
+package com.eazy.core.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
