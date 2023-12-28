@@ -9,7 +9,8 @@
 	</parent>
 	<artifactId>cards</artifactId>
 	<name>cards</name>
-	<description>Microservice for loans</description>
+	<packaging>jar</packaging>
+	<description>Microservice for cards</description>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

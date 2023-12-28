@@ -9,6 +9,7 @@
 	</parent>
 	<artifactId>com.eazy.core</artifactId>
 	<name>core</name>
+	<packaging>jar</packaging>
 	<description>Microservice Core</description>
 	<dependencies>
 		<dependency>

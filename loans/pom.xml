@@ -9,6 +9,7 @@
 	</parent>
 	<artifactId>loans</artifactId>
 	<name>loans</name>
+	<packaging>jar</packaging>
 	<description>Microservice for loans</description>
 	<dependencies>
 		<dependency>

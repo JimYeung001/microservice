@@ -11,6 +11,7 @@
 	</parent>
 	<artifactId>accounts</artifactId>
 	<name>accounts</name>
+	<packaging>jar</packaging>
 	<description>Microservice for accounts</description>
 	<dependencies>
 		<dependency>
