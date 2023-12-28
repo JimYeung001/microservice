@@ -13,7 +13,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 
 @SpringBootApplication
-@EnableJpaAuditing(auditorAwareRef="auditAwareImpl")
+@EnableJpaAuditing(auditorAwareRef="accountsAuditAwareImpl")
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Accounts Microservice REST API Documentation",

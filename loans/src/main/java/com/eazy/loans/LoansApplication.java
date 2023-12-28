@@ -13,7 +13,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 
 
-@EnableJpaAuditing(auditorAwareRef="auditAwareImpl")
+@EnableJpaAuditing(auditorAwareRef="loansAuditAwareImpl")
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Loans Microservice REST API Documentation",

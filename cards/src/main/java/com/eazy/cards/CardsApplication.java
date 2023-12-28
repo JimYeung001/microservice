@@ -12,7 +12,7 @@ import io.swagger.v3.oas.annotations.info.Contact;
 import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 
-@EnableJpaAuditing(auditorAwareRef="auditAwareImpl")
+@EnableJpaAuditing(auditorAwareRef="cardsAuditAwareImpl")
 @OpenAPIDefinition(
 		info = @Info(
 				title = "Cards Microservice REST API Documentation",
