@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.eazy.core.constants.ApplicationConstants;
+import com.eazy.core.dto.ContactInfoDto;
 import com.eazy.core.dto.ErrorResponseDto;
 import com.eazy.core.dto.LoansDto;
 import com.eazy.core.dto.ResponseDto;
@@ -37,6 +38,9 @@ public class LoansController {
 
 	@Autowired
 	private ILoansService iLoansService;
+
+	@Autowired
+	ContactInfoDto contactInfoDto;
 
 	@Operation(summary = "Create Loan", description = "REST API to create Loans in Eazy")
 	@ApiResponse(responseCode = "201", description = "HTTP status CREATED")
@@ -85,5 +89,14 @@ public class LoansController {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED)
 					.body(new ResponseDto(ApplicationConstants.STATUS_417, ApplicationConstants.MESSAGE_417_DELETE));
 		}
+	}
+	
+	@Operation(summary = "Contact", description = "REST API to get contact information")
+	@ApiResponses({ @ApiResponse(responseCode = "200", description = "HTTP status OK"),
+			@ApiResponse(responseCode = "417", description = "Delete expectation failed") })
+	@GetMapping("/contact-info")
+	public ResponseEntity<ContactInfoDto> getContact() {
+		return ResponseEntity.status(HttpStatus.OK).body(contactInfoDto);
+
 	}
 }
