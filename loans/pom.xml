@@ -107,7 +107,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>qzy111/${project.name}:v1</image>
+						<image>qzy111/${project.name}:v2</image>
 					</to>
 				</configuration>
 			</plugin>

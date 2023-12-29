@@ -1,0 +1,20 @@
+services:
+  network-deploy-service:
+    network:
+      - "eazyNetwork"
+  
+  microservice-base-config:
+    extends:
+      service: network-deploy-service
+    deploy:
+        resources:
+          limits:
+            memory: 700m
+  
+  microservice-configserver-config:
+    depends_on:
+      rabbit:
+        condition: service_healthy
+    environment:
+      SPRING_PROFILE_ACTIVE: default
+      SPRING_CONFIG_IMPORT: "configserver:http://configserver:8071"
