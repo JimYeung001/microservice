@@ -1,0 +1,8 @@
+accounts:
+   message: "Welcome to Eazy Cards QA API"
+   contactDetails:
+      name: "Emy Yeung"
+      email: "emy@gmail.com"
+   onCallSupport:
+      - (555)444-1230
+      - (555)444-1231

@@ -1,0 +1,8 @@
+accounts:
+   message: "Welcome to Eazy Cards API"
+   contactDetails:
+      name: "Jim Yeung"
+      email: "qzy114@gmail.com"
+   onCallSupport:
+      - (555)444-1234
+      - (555)444-1235

@@ -1,0 +1,8 @@
+accounts:
+   message: "Welcome to Eazy Accounts PROD API"
+   contactDetails:
+      name: "Joy Yeung"
+      email: "joy@gmail.com"
+   onCallSupport:
+      - (555)444-1233
+      - (555)444-1255

@@ -9,6 +9,7 @@
 	  <module>core</module>
 	  <module>accounts</module>
 	  <module>cards</module>
-	  <module>loans</module>  	
+	  <module>loans</module> 
+	  <module>configserver</module> 	
   </modules>
 </project>
