@@ -16,7 +16,7 @@ services:
          service: network-deploy-service
    
    configserver:
-      image: "qzy111/configserver:v1"
+      image: "qzy111/configserver:v2"
       container_name: configserver_ms
       ports:
          - "8071:8071"
@@ -34,7 +34,7 @@ services:
          service: microservice-base-config
    
    accounts:
-      image: "qzy111/accounts:v1"
+      image: "qzy111/accounts:v2"
       container_name: accounts_ms
       ports:
          - "8080:8080"
@@ -45,7 +45,7 @@ services:
          service: microservice-configserver-config
                
    loans:
-      image: "qzy111/loans:v1"
+      image: "qzy111/loans:v2"
       container_name: loans_ms
       ports:
          - "8090:8090"
@@ -56,7 +56,7 @@ services:
          service: microservice-configserver-config
 
    cards:
-      image: "qzy111/cards:v1"
+      image: "qzy111/cards:v2"
       container_name: cards_ms
       ports:
          - "9000:9000"
