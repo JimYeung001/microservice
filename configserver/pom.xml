@@ -27,15 +27,18 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-monitor</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-rsa</artifactId>
 		</dependency>
 	</dependencies>
 	<dependencyManagement>
@@ -62,7 +65,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>qzy111/${project.name}:v3</image>
+						<image>qzy111/${project.name}:v4</image>
 					</to>
 				</configuration>
 			</plugin>

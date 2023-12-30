@@ -1,0 +1,326 @@
+{
+	"Id": "08102a88aaf25f998f059b21c6ed82c15f811ee9f51b2be6be8a036d0ba0c37c",
+	"Created": "2023-12-30T16:38:49.69801082Z",
+	"Path": "docker-entrypoint.sh",
+	"Args": [
+		"rabbitmq-server"
+	],
+	"State": {
+		"Status": "running",
+		"Running": true,
+		"Paused": false,
+		"Restarting": false,
+		"OOMKilled": false,
+		"Dead": false,
+		"Pid": 31579,
+		"ExitCode": 0,
+		"Error": "",
+		"StartedAt": "2023-12-30T16:38:53.896808821Z",
+		"FinishedAt": "0001-01-01T00:00:00Z",
+		"Health": {
+			"Status": "healthy",
+			"FailingStreak": 0,
+			"Log": [
+				{
+					"Start": "2023-12-30T16:51:51.74655915Z",
+					"End": "2023-12-30T16:51:52.333828215Z",
+					"ExitCode": 0,
+					"Output": "Testing TCP connections to all active listeners on node rabbit@rabbitmq using hostname resolution ...\nWill connect to rabbitmq:15672\nWill connect to rabbitmq:15692\nWill connect to rabbitmq:25672\nWill connect to rabbitmq:5672\nSuccessfully connected to ports 5672, 15672, 15692, 25672 on node rabbit@rabbitmq (using node hostname resolution)\n"
+				},
+				{
+					"Start": "2023-12-30T16:52:02.341021035Z",
+					"End": "2023-12-30T16:52:02.953228719Z",
+					"ExitCode": 0,
+					"Output": "Testing TCP connections to all active listeners on node rabbit@rabbitmq using hostname resolution ...\nWill connect to rabbitmq:15672\nWill connect to rabbitmq:15692\nWill connect to rabbitmq:25672\nWill connect to rabbitmq:5672\nSuccessfully connected to ports 5672, 15672, 15692, 25672 on node rabbit@rabbitmq (using node hostname resolution)\n"
+				},
+				{
+					"Start": "2023-12-30T16:52:12.959727783Z",
+					"End": "2023-12-30T16:52:13.563826325Z",
+					"ExitCode": 0,
+					"Output": "Testing TCP connections to all active listeners on node rabbit@rabbitmq using hostname resolution ...\nWill connect to rabbitmq:15672\nWill connect to rabbitmq:15692\nWill connect to rabbitmq:25672\nWill connect to rabbitmq:5672\nSuccessfully connected to ports 5672, 15672, 15692, 25672 on node rabbit@rabbitmq (using node hostname resolution)\n"
+				},
+				{
+					"Start": "2023-12-30T16:52:23.578448551Z",
+					"End": "2023-12-30T16:52:24.174207017Z",
+					"ExitCode": 0,
+					"Output": "Testing TCP connections to all active listeners on node rabbit@rabbitmq using hostname resolution ...\nWill connect to rabbitmq:15672\nWill connect to rabbitmq:15692\nWill connect to rabbitmq:25672\nWill connect to rabbitmq:5672\nSuccessfully connected to ports 5672, 15672, 15692, 25672 on node rabbit@rabbitmq (using node hostname resolution)\n"
+				},
+				{
+					"Start": "2023-12-30T16:52:34.181426082Z",
+					"End": "2023-12-30T16:52:34.806490397Z",
+					"ExitCode": 0,
+					"Output": "Testing TCP connections to all active listeners on node rabbit@rabbitmq using hostname resolution ...\nWill connect to rabbitmq:15672\nWill connect to rabbitmq:15692\nWill connect to rabbitmq:25672\nWill connect to rabbitmq:5672\nSuccessfully connected to ports 5672, 15672, 15692, 25672 on node rabbit@rabbitmq (using node hostname resolution)\n"
+				}
+			]
+		}
+	},
+	"Image": "sha256:2d45ce625f60dbfe711bfc0dd95dd526f5f19e851ecfccea46e6078be31d280b",
+	"ResolvConfPath": "/var/lib/docker/containers/08102a88aaf25f998f059b21c6ed82c15f811ee9f51b2be6be8a036d0ba0c37c/resolv.conf",
+	"HostnamePath": "/var/lib/docker/containers/08102a88aaf25f998f059b21c6ed82c15f811ee9f51b2be6be8a036d0ba0c37c/hostname",
+	"HostsPath": "/var/lib/docker/containers/08102a88aaf25f998f059b21c6ed82c15f811ee9f51b2be6be8a036d0ba0c37c/hosts",
+	"LogPath": "/var/lib/docker/containers/08102a88aaf25f998f059b21c6ed82c15f811ee9f51b2be6be8a036d0ba0c37c/08102a88aaf25f998f059b21c6ed82c15f811ee9f51b2be6be8a036d0ba0c37c-json.log",
+	"Name": "/default-rabbit-1",
+	"RestartCount": 0,
+	"Driver": "overlay2",
+	"Platform": "linux",
+	"MountLabel": "",
+	"ProcessLabel": "",
+	"AppArmorProfile": "",
+	"ExecIDs": null,
+	"HostConfig": {
+		"Binds": null,
+		"ContainerIDFile": "",
+		"LogConfig": {
+			"Type": "json-file",
+			"Config": {}
+		},
+		"NetworkMode": "default_eazybank",
+		"PortBindings": {
+			"15672/tcp": [
+				{
+					"HostIp": "",
+					"HostPort": "15672"
+				}
+			],
+			"5672/tcp": [
+				{
+					"HostIp": "",
+					"HostPort": "5672"
+				}
+			]
+		},
+		"RestartPolicy": {
+			"Name": "",
+			"MaximumRetryCount": 0
+		},
+		"AutoRemove": false,
+		"VolumeDriver": "",
+		"VolumesFrom": null,
+		"ConsoleSize": [
+			0,
+			0
+		],
+		"CapAdd": null,
+		"CapDrop": null,
+		"CgroupnsMode": "host",
+		"Dns": null,
+		"DnsOptions": null,
+		"DnsSearch": null,
+		"ExtraHosts": [],
+		"GroupAdd": null,
+		"IpcMode": "private",
+		"Cgroup": "",
+		"Links": null,
+		"OomScoreAdj": 0,
+		"PidMode": "",
+		"Privileged": false,
+		"PublishAllPorts": false,
+		"ReadonlyRootfs": false,
+		"SecurityOpt": null,
+		"UTSMode": "",
+		"UsernsMode": "",
+		"ShmSize": 67108864,
+		"Runtime": "runc",
+		"Isolation": "",
+		"CpuShares": 0,
+		"Memory": 0,
+		"NanoCpus": 0,
+		"CgroupParent": "",
+		"BlkioWeight": 0,
+		"BlkioWeightDevice": null,
+		"BlkioDeviceReadBps": null,
+		"BlkioDeviceWriteBps": null,
+		"BlkioDeviceReadIOps": null,
+		"BlkioDeviceWriteIOps": null,
+		"CpuPeriod": 0,
+		"CpuQuota": 0,
+		"CpuRealtimePeriod": 0,
+		"CpuRealtimeRuntime": 0,
+		"CpusetCpus": "",
+		"CpusetMems": "",
+		"Devices": null,
+		"DeviceCgroupRules": null,
+		"DeviceRequests": null,
+		"MemoryReservation": 0,
+		"MemorySwap": 0,
+		"MemorySwappiness": null,
+		"OomKillDisable": false,
+		"PidsLimit": null,
+		"Ulimits": null,
+		"CpuCount": 0,
+		"CpuPercent": 0,
+		"IOMaximumIOps": 0,
+		"IOMaximumBandwidth": 0,
+		"MaskedPaths": [
+			"/proc/asound",
+			"/proc/acpi",
+			"/proc/kcore",
+			"/proc/keys",
+			"/proc/latency_stats",
+			"/proc/timer_list",
+			"/proc/timer_stats",
+			"/proc/sched_debug",
+			"/proc/scsi",
+			"/sys/firmware",
+			"/sys/devices/virtual/powercap"
+		],
+		"ReadonlyPaths": [
+			"/proc/bus",
+			"/proc/fs",
+			"/proc/irq",
+			"/proc/sys",
+			"/proc/sysrq-trigger"
+		]
+	},
+	"GraphDriver": {
+		"Data": {
+			"LowerDir": "/var/lib/docker/overlay2/739c2162388caf3cfe4b8114c87ce66bec77be7dc12ea94cd9d49034ad3a2dbc-init/diff:/var/lib/docker/overlay2/69e4529bb49128b3abfa4efe7ace0fb97b97fb377ebb5a259c1e7672c9ebe462/diff:/var/lib/docker/overlay2/a873141ad788a40e619387a275f8e05678c955fbf1ca1db1c455ad13a2cba520/diff:/var/lib/docker/overlay2/2e0ea95c3cd5aa8430d4066271516c4fc935937db4b200a93028fa359565fb68/diff:/var/lib/docker/overlay2/925d637d5d99506d3e1613d7315f54525dacdeb06dad26b9c8da23021d08873b/diff:/var/lib/docker/overlay2/a8cd52139732f40db5f17f95a51bd2676e80721affa4947522ec1b731fabb5f3/diff:/var/lib/docker/overlay2/56f88ec7fe3ffa614ae313a3bb95c1f39b14edd7589dc571743dc77d1772eb07/diff:/var/lib/docker/overlay2/0d86d946f78b04500738f499569e56f866692e1364110f6914dfa4d5cf9c0d8f/diff:/var/lib/docker/overlay2/9e244f53c53393270d91784566d02cf5c12e01f15f1a15f632a9e650a22380aa/diff:/var/lib/docker/overlay2/0d8228b7ccf16eb4bd1fa462e60b30ba9ab4ca0bf8c0583e1ad3d6839f4a0fe9/diff:/var/lib/docker/overlay2/756108b2fef7fc616f6fa137d7ff50abcc5ed84a3efab01a5925bf2a20fe718a/diff:/var/lib/docker/overlay2/6f145369b2d85a695730f052a5333f03417af3cf91d2571af520af8aadbb1be8/diff:/var/lib/docker/overlay2/5846a5dc5ca1beeeff51a3d4d80c70316b704667df5f2a3e8745b4b05872b150/diff",
+			"MergedDir": "/var/lib/docker/overlay2/739c2162388caf3cfe4b8114c87ce66bec77be7dc12ea94cd9d49034ad3a2dbc/merged",
+			"UpperDir": "/var/lib/docker/overlay2/739c2162388caf3cfe4b8114c87ce66bec77be7dc12ea94cd9d49034ad3a2dbc/diff",
+			"WorkDir": "/var/lib/docker/overlay2/739c2162388caf3cfe4b8114c87ce66bec77be7dc12ea94cd9d49034ad3a2dbc/work"
+		},
+		"Name": "overlay2"
+	},
+	"Mounts": [
+		{
+			"Type": "volume",
+			"Name": "20940e5a259f1d72a65df4662bac91e3b5d91a4bcb691f8e83327fb64871a478",
+			"Source": "/var/lib/docker/volumes/20940e5a259f1d72a65df4662bac91e3b5d91a4bcb691f8e83327fb64871a478/_data",
+			"Destination": "/var/lib/rabbitmq",
+			"Driver": "local",
+			"Mode": "",
+			"RW": true,
+			"Propagation": ""
+		}
+	],
+	"Config": {
+		"Hostname": "rabbitmq",
+		"Domainname": "",
+		"User": "",
+		"AttachStdin": false,
+		"AttachStdout": true,
+		"AttachStderr": true,
+		"ExposedPorts": {
+			"15671/tcp": {},
+			"15672/tcp": {},
+			"15691/tcp": {},
+			"15692/tcp": {},
+			"25672/tcp": {},
+			"4369/tcp": {},
+			"5671/tcp": {},
+			"5672/tcp": {}
+		},
+		"Tty": false,
+		"OpenStdin": false,
+		"StdinOnce": false,
+		"Env": [
+			"PATH=/opt/rabbitmq/sbin:/opt/erlang/bin:/opt/openssl/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+			"ERLANG_INSTALL_PATH_PREFIX=/opt/erlang",
+			"OPENSSL_INSTALL_PATH_PREFIX=/opt/openssl",
+			"RABBITMQ_DATA_DIR=/var/lib/rabbitmq",
+			"RABBITMQ_VERSION=3.12.11",
+			"RABBITMQ_PGP_KEY_ID=0x0A9AF2115F4687BD29803A206B73A36E6026DFCA",
+			"RABBITMQ_HOME=/opt/rabbitmq",
+			"HOME=/var/lib/rabbitmq",
+			"LANG=C.UTF-8",
+			"LANGUAGE=C.UTF-8",
+			"LC_ALL=C.UTF-8"
+		],
+		"Cmd": [
+			"rabbitmq-server"
+		],
+		"Healthcheck": {
+			"Test": [
+				"CMD-SHELL",
+				"rabbitmq-diagnostics check_port_connectivity"
+			],
+			"Interval": 10000000000,
+			"Timeout": 5000000000,
+			"StartPeriod": 5000000000,
+			"Retries": 10
+		},
+		"Image": "rabbitmq:3.12-management",
+		"Volumes": {
+			"/var/lib/rabbitmq": {}
+		},
+		"WorkingDir": "",
+		"Entrypoint": [
+			"docker-entrypoint.sh"
+		],
+		"OnBuild": null,
+		"Labels": {
+			"com.docker.compose.config-hash": "69977ffc3157e42ee4382536e8397d51caf4a470e8b960a79a2ab64d74a01fc9",
+			"com.docker.compose.container-number": "1",
+			"com.docker.compose.depends_on": "",
+			"com.docker.compose.image": "sha256:2d45ce625f60dbfe711bfc0dd95dd526f5f19e851ecfccea46e6078be31d280b",
+			"com.docker.compose.oneoff": "False",
+			"com.docker.compose.project": "default",
+			"com.docker.compose.project.config_files": "C:\\Users\\jimya\\Downloads\\microservices-main\\section6\\v2-spring-cloud-config\\docker-compose\\default\\docker-compose.yml",
+			"com.docker.compose.project.working_dir": "C:\\Users\\jimya\\Downloads\\microservices-main\\section6\\v2-spring-cloud-config\\docker-compose\\default",
+			"com.docker.compose.service": "rabbit",
+			"com.docker.compose.version": "2.23.3",
+			"org.opencontainers.image.ref.name": "ubuntu",
+			"org.opencontainers.image.version": "22.04"
+		}
+	},
+	"NetworkSettings": {
+		"Bridge": "",
+		"SandboxID": "31d1550547eefe318e0cd6d290eb9847b674907a86026aeedc7d826db693d7e6",
+		"HairpinMode": false,
+		"LinkLocalIPv6Address": "",
+		"LinkLocalIPv6PrefixLen": 0,
+		"Ports": {
+			"15671/tcp": null,
+			"15672/tcp": [
+				{
+					"HostIp": "0.0.0.0",
+					"HostPort": "15672"
+				}
+			],
+			"15691/tcp": null,
+			"15692/tcp": null,
+			"25672/tcp": null,
+			"4369/tcp": null,
+			"5671/tcp": null,
+			"5672/tcp": [
+				{
+					"HostIp": "0.0.0.0",
+					"HostPort": "5672"
+				}
+			]
+		},
+		"SandboxKey": "/var/run/docker/netns/31d1550547ee",
+		"SecondaryIPAddresses": null,
+		"SecondaryIPv6Addresses": null,
+		"EndpointID": "",
+		"Gateway": "",
+		"GlobalIPv6Address": "",
+		"GlobalIPv6PrefixLen": 0,
+		"IPAddress": "",
+		"IPPrefixLen": 0,
+		"IPv6Gateway": "",
+		"MacAddress": "",
+		"Networks": {
+			"default_eazybank": {
+				"IPAMConfig": null,
+				"Links": null,
+				"Aliases": [
+					"default-rabbit-1",
+					"rabbit",
+					"08102a88aaf2",
+					"rabbitmq"
+				],
+				"MacAddress": "02:42:ac:1e:00:02",
+				"NetworkID": "ea53477f1db61df19c44fc7a44a4c9218d374b9ed38927a51dc34d97e85db551",
+				"EndpointID": "59cbbb4b3bd1042ac82b82658c495787cef96e187eb3e471383524891c676bb6",
+				"Gateway": "172.30.0.1",
+				"IPAddress": "172.30.0.2",
+				"IPPrefixLen": 16,
+				"IPv6Gateway": "",
+				"GlobalIPv6Address": "",
+				"GlobalIPv6PrefixLen": 0,
+				"DriverOpts": null
+			}
+		}
+	}
+}
