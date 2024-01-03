@@ -1,0 +1,39 @@
+https://cglearning.udemy.com/course/java-microservices-cqrs-event-sourcing-with-kafka/learn/lecture/29505242#overview
+
+docker run -it -d --name mysql-container -p 3306:3306 --network techbankNet -e MYSQL_ROOT_PASSWORD=1122 --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+docker run -it -d --name mongo-container -p 27017:27017 --network techbankNet --restart always -v mongodb_data_container:/data/db mongo:latest
+docker run -it -d --name adminer -p 8080:8080 --network techbankNet -e ADMINER_DEFAULT_SERVER=mysql-container --restart always adminer:latest
+
+
+"curl --fail --lilent localhost:8071/actuator/health/liveness : grep UP||exit 1"
+
+(HTTP code 500) server error - Ports are not available: exposing port bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
+
+docker image push docker.io/qzy111/configserver:v5
+docker image push docker.io/qzy111/loans:v5
+docker image push docker.io/qzy111/cards:v5
+docker image push docker.io/qzy111/accounts:v5
+
+mvn compile jib:dockerBuild
+
+
+docker run -it -d --name mysql-container -p 3306:3306 --network techbankNet -e MYSQL_ROOT_PASSWORD=1122 --restart always -v mysql_data_container:/var/lib/mysql mysql:latest
+
+docker network create -d bridge eazyNet
+docker run -itd --rm --name rabbitmq -p 5672:5672 -p 15672:15672 --network eazyNet rabbitmq:3.12-management
+docker run -itd --name ms_configserver -p 8071:8071 --network eazyNet qzy111/configserver:v3
+docker run -itd --name ms_accounts -p 8080:8080 --network eazyNet qzy111/accounts:v3
+
+
+docker run -itd --name accountsdb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1122 -e MYSQL_DATABASE=accountsdb mysql:latest
+docker run -itd --name cardsdb -p 3307:3306 -e MYSQL_ROOT_PASSWORD=1122 -e MYSQL_DATABASE=cardsdb mysql:latest
+docker run -itd --name loansdb -p 3308:3306 -e MYSQL_ROOT_PASSWORD=1122 -e MYSQL_DATABASE=loansdb mysql:latest
+
+
+
+
+
+
+
+
+
