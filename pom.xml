@@ -10,6 +10,7 @@
 	  <module>accounts</module>
 	  <module>cards</module>
 	  <module>loans</module> 
-	  <module>configserver</module> 	
+	  <module>configserver</module>
+	  <module>eurekaserver</module> 	 	
   </modules>
 </project>
