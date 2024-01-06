@@ -103,7 +103,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>qzy111/${project.name}:v5</image>
+						<image>qzy111/${project.name}:v6</image>
 					</to>
 				</configuration>
 			</plugin>
