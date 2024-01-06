@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -16,6 +17,7 @@ import io.swagger.v3.oas.annotations.info.Info;
 import io.swagger.v3.oas.annotations.info.License;
 
 @SpringBootApplication
+@EnableFeignClients
 @EnableJpaAuditing(auditorAwareRef = "accountsAuditAwareImpl")
 @EnableConfigurationProperties(value = { ContactInfoDto.class })
 @OpenAPIDefinition(info = @Info(title = "Accounts Microservice REST API Documentation", description = "Ezy Accounts Microservice REST API Documentation", version = "V1", contact = @Contact(name = "Jim Yeung", email = "qzy114@gmail.com", url = "http://localhost:8080/swagger-ui/index.html#/"), license = @License(name = "Apache 2.0")))
