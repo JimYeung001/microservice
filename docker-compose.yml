@@ -1,37 +1,7 @@
 services:
-  accountsdb:
-    container_name: accountsdb
-    ports:
-      - 3306:3306
-    environment:
-      MYSQL_DATABASE: accountsdb
-    extends:
-      file: common-config.yml
-      service: microservice-db-config
-
-  cardsdb:
-    container_name: cardsdb
-    ports:
-      - 3307:3306
-    environment:
-      MYSQL_DATABASE: cardsdb
-    extends:
-      file: common-config.yml
-      service: microservice-db-config
-
-  loansdb:
-    container_name: loansdb
-    ports:
-      - 3308:3306
-    environment:
-      MYSQL_DATABASE: loansdb
-    extends:
-      file: common-config.yml
-      service: microservice-db-config
-
   configserver:
-    image: "qzy111/configserver:v5"
-    container_name: configserver-ms
+    image: "qzy111/configserver:v7"
+    container_name: ms-configserver
     ports:
       - "8071:8071"
     healthcheck:
@@ -44,50 +14,66 @@ services:
       file: common-config.yml
       service: microservice-base-config
 
+  eurekaserver:
+    image: "qzy111/eurekaserver:v7"
+    container_name: ms-eurekaserver
+    ports:
+      - "8070:8070"
+    healthcheck:
+      test: "curl --fail --silent localhost:8070/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    extends:
+      file: common-config.yml
+      service: microservice-configserver-config
+    environment:
+      SPRING_APPLICATION_NAME: "eurekaserver"
+
   accounts:
-    image: "qzy111/accounts:v6"
-    container_name: accounts-ms
+    image: "qzy111/accounts:v7"
+    container_name: ms-accounts
     ports:
       - "8080:8080"
     environment:
       SPRING_APPLICATION_NAME: "accounts"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://accountsdb:3306/accountsdb"
-    depends_on:
-      accountsdb:
-        condition: service_healthy
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
   loans:
-    image: "qzy111/loans:v6"
-    container_name: loans-ms
+    image: "qzy111/loans:v7"
+    container_name: ms-loans
     ports:
       - "8090:8090"
     environment:
       SPRING_APPLICATION_NAME: "loans"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://loansdb:3306/loansdb"
-    depends_on:
-      loansdb:
-        condition: service_healthy  
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
+
+  loans1:
+    image: "qzy111/loans:v7"
+    container_name: ms-loans1
+    ports:
+      - "8091:8090"
+    environment:
+      SPRING_APPLICATION_NAME: "loans"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
 
   cards:
-    image: "qzy111/cards:v6"
-    container_name: cards-ms
+    image: "qzy111/cards:v7"
+    container_name: ms-cards
     ports:
       - "9000:9000"
     environment:
       SPRING_APPLICATION_NAME: "cards"
-      SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
-    depends_on:
-      cardsdb:
-        condition: service_healthy  
     extends:
       file: common-config.yml
-      service: microservice-configserver-config
+      service: microservice-eureka-config
 
 networks:
   eazyNetwork:
