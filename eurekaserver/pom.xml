@@ -62,7 +62,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>qzy111/${project.name}:v7</image>
+						<image>qzy111/${project.name}:v9</image>
 					</to>
 				</configuration>
 			</plugin>

@@ -1,6 +1,6 @@
 services:
   configserver:
-    image: "qzy111/configserver:v7"
+    image: "qzy111/configserver:v8"
     container_name: ms-configserver
     ports:
       - "8071:8071"
@@ -15,7 +15,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "qzy111/eurekaserver:v7"
+    image: "qzy111/eurekaserver:v9"
     container_name: ms-eurekaserver
     ports:
       - "8070:8070"
@@ -32,10 +32,16 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "qzy111/accounts:v7"
+    image: "qzy111/accounts:v9"
     container_name: ms-accounts
     ports:
       - "8080:8080"
+    healthcheck:
+      test: "curl --fail --silent localhost:8080/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "accounts"
     extends:
@@ -43,21 +49,16 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "qzy111/loans:v7"
+    image: "qzy111/loans:v9"
     container_name: ms-loans
     ports:
       - "8090:8090"
-    environment:
-      SPRING_APPLICATION_NAME: "loans"
-    extends:
-      file: common-config.yml
-      service: microservice-eureka-config
-
-  loans1:
-    image: "qzy111/loans:v7"
-    container_name: ms-loans1
-    ports:
-      - "8091:8090"
+    healthcheck:
+      test: "curl --fail --silent localhost:8090/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "loans"
     extends:
@@ -65,12 +66,36 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "qzy111/cards:v7"
+    image: "qzy111/cards:v9"
     container_name: ms-cards
     ports:
       - "9000:9000"
+    healthcheck:
+      test: "curl --fail --silent localhost:9000/actuator/health/readiness | grep UP || exit 1"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
     environment:
       SPRING_APPLICATION_NAME: "cards"
+    extends:
+      file: common-config.yml
+      service: microservice-eureka-config
+
+  gatewayserver:
+    image: "qzy111/gatewayserver:v9"
+    container_name: ms-gatewayserver
+    ports:
+      - "8072:8072"
+    depends_on:
+      accounts:
+        condition: service_healthy
+      cards:
+        condition: service_healthy
+      loans:
+        condition: service_healthy
+    environment:
+      SPRING_APPLICATION_NAME: "gatewayserver"
     extends:
       file: common-config.yml
       service: microservice-eureka-config

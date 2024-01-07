@@ -10,10 +10,11 @@ docker run -it -d --name adminer -p 8080:8080 --network techbankNet -e ADMINER_D
 (HTTP code 500) server error - Ports are not available: exposing port bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 
 docker image push docker.io/qzy111/configserver:v7
-docker image push docker.io/qzy111/loans:v7
-docker image push docker.io/qzy111/cards:v7
-docker image push docker.io/qzy111/accounts:v7
-docker image push docker.io/qzy111/eurekaserver:v7
+docker image push docker.io/qzy111/loans:v9
+docker image push docker.io/qzy111/cards:v9
+docker image push docker.io/qzy111/accounts:v9
+docker image push docker.io/qzy111/eurekaserver:v9
+docker image push docker.io/qzy111/gatewayserver:v9
 
 mvn compile jib:dockerBuild
 
