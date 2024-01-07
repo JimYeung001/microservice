@@ -55,3 +55,9 @@ info:
     name: "loans"
     description: "Eazy loans Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      eazy:
+        loans: DEBUG

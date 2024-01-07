@@ -55,3 +55,9 @@ info:
     name: "cards"
     description: "Eazy Cards Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      eazy:
+        cards: DEBUG

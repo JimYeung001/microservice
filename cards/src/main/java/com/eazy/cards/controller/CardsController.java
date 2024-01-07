@@ -1,5 +1,7 @@
 package com.eazy.cards.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,6 +38,7 @@ import jakarta.validation.constraints.Pattern;
 @RequestMapping(path = "/api", produces = (MediaType.APPLICATION_JSON_VALUE))
 @Validated
 public class CardsController {
+	public static final Logger logger = LoggerFactory.getLogger(CardsController.class);
 
 	@Autowired
 	private ICardsService iCardsService;
@@ -54,8 +58,9 @@ public class CardsController {
 	@Operation(summary = "Fetch cards", description = "REST API to fetch existing cards in Eazy")
 	@ApiResponse(responseCode = "200", description = "HTTP status OK")
 	@GetMapping("/fetch")
-	public ResponseEntity<CardsDto> fetchCard(
+	public ResponseEntity<CardsDto> fetchCard(@RequestHeader("eazy-correlation-id") String correlationId,
 			@RequestParam @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits") String mobileNumber) {
+		logger.debug("eazy-correlation-id found: {}", correlationId);
 		CardsDto cardsDto = iCardsService.fetchCard(mobileNumber);
 		return ResponseEntity.status(HttpStatus.OK).body(cardsDto);
 	}

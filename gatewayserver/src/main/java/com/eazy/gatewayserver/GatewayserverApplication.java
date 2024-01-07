@@ -1,5 +1,7 @@
 package com.eazy.gatewayserver;
 
+import java.time.LocalDateTime;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.gateway.route.RouteLocator;
@@ -18,13 +20,16 @@ public class GatewayserverApplication {
 	public RouteLocator eazyRouteConfig(RouteLocatorBuilder routeLocatorBuilder) {
 		return routeLocatorBuilder.routes()
 				.route(p -> p.path("/easy/accounts/**")
-						.filters(f->f.rewritePath("/easy/accounts/(?<segment>.*)", "/${segment}"))
+						.filters(f->f.rewritePath("/easy/accounts/(?<segment>.*)", "/${segment}")
+								.addResponseHeader("X-Response-Time",LocalDateTime.now().toString()))
 						.uri("lb://ACCOUNTS"))
 				.route(p -> p.path("/easy/loans/**")
-						.filters(f->f.rewritePath("/easy/loans/(?<segment>.*)", "/${segment}"))
+						.filters(f->f.rewritePath("/easy/loans/(?<segment>.*)", "/${segment}")
+								.addResponseHeader("X-Response-Time",LocalDateTime.now().toString()))
 						.uri("lb://LOANS"))
 				.route(p -> p.path("/easy/cards/**")
-						.filters(f->f.rewritePath("/easy/cards/(?<segment>.*)", "/${segment}"))
+						.filters(f->f.rewritePath("/easy/cards/(?<segment>.*)", "/${segment}")
+								.addResponseHeader("X-Response-Time",LocalDateTime.now().toString()))
 						.uri("lb://CARDS")).build();
 	}
 }

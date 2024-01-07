@@ -7,7 +7,8 @@ public interface ICustomerService {
 	/**
 	 * 
 	 * @param mobileNumber
+	 * @param correlationId 
 	 * @return
 	 */
-	CustomerDetailsDto fetchCustomerDetails(String mobileNumber);
+	CustomerDetailsDto fetchCustomerDetails(String mobileNumber, String correlationId);
 }
