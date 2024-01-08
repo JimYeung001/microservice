@@ -10,7 +10,6 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password: ''
-
   jpa:
     show-sql: true
   sql:
@@ -18,6 +17,10 @@ spring:
       mode: always
   config:
     import: "optional:configserver:http://localhost:8071"
+  cloud:
+    openfeign:
+      circuitbreaker:
+        enabled: true
 
 management:
   endpoints:
@@ -65,3 +68,10 @@ logging:
     com:
       eazy:
         accounts: DEBUG
+
+resilience4j-circuitbreaker:
+  config:
+    slidingWindowSize: 10
+    permittedNumberOfCallsInHalfOpenState: 2
+    failureRateThreashold: 50
+    waitDurationInOpenState: 10000

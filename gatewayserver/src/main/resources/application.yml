@@ -33,3 +33,10 @@ logging:
     com:
       eazy:
         gatewayserver: DEBUG
+
+resilience4j-circuitbreaker:
+  config:
+    slidingWindowSize: 10
+    permittedNumberOfCallsInHalfOpenState: 2
+    failureRateThreashold: 50
+    waitDurationInOpenState: 10000
