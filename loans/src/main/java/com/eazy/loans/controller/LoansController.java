@@ -101,6 +101,7 @@ public class LoansController {
 			@ApiResponse(responseCode = "417", description = "Delete expectation failed") })
 	@GetMapping("/contact-info")
 	public ResponseEntity<ContactInfoDto> getContact() {
+		logger.debug("Invoked Loans contact-info API");
 		return ResponseEntity.status(HttpStatus.OK).body(contactInfoDto);
 
 	}
