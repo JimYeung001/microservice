@@ -1,7 +1,5 @@
 package com.eazy.accounts.controller;
 
-import java.util.concurrent.TimeoutException;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +23,7 @@ import com.eazy.core.dto.CustomerDto;
 import com.eazy.core.dto.ErrorResponseDto;
 import com.eazy.core.dto.ResponseDto;
 
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
 import io.github.resilience4j.retry.annotation.Retry;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
@@ -117,5 +116,14 @@ public class AccountController {
 	public ResponseEntity<String> getBuildInfoFallback(Throwable throwable) {
 		logger.debug("getBuildInfoFallback() method invoked");
 		return ResponseEntity.status(HttpStatus.OK).body("0.9");
+	}
+
+	@RateLimiter(name="getJavaVersion", fallbackMethod="getJavaVersionFallback")
+	@GetMapping("/java-version")
+	public ResponseEntity<String> getJavaVersion() {
+		return ResponseEntity.status(HttpStatus.OK).body(System.getProperty("java.version"));
+	}
+	public ResponseEntity<String> getJavaVersionFallback(Throwable throwable) {
+		return ResponseEntity.status(HttpStatus.OK).body("java 17");
 	}
 }
