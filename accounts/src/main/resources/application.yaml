@@ -43,6 +43,9 @@ management:
       enabled: true
     refresh:
       enabled: true
+  metrics:
+    logs:
+      application: ${spring.application.name}      
  
 endpoints:
   shutdown:
@@ -94,3 +97,4 @@ resilience4j.ratelimiter:
       timeoutDuration: 1000
       limitRefreshPeriod: 5000
       limitForPeriod: 1
+
