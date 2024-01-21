@@ -9,12 +9,12 @@ docker run -it -d --name adminer -p 8080:8080 --network techbankNet -e ADMINER_D
 
 (HTTP code 500) server error - Ports are not available: exposing port bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 
-docker image push docker.io/qzy111/configserver:v8
-docker image push docker.io/qzy111/loans:v10
-docker image push docker.io/qzy111/cards:v10
-docker image push docker.io/qzy111/accounts:v10
-docker image push docker.io/qzy111/eurekaserver:v10
-docker image push docker.io/qzy111/gatewayserver:v10
+docker image push docker.io/qzy111/configserver:v11
+docker image push docker.io/qzy111/loans:v11
+docker image push docker.io/qzy111/cards:v11
+docker image push docker.io/qzy111/accounts:v11
+docker image push docker.io/qzy111/eurekaserver:v11
+docker image push docker.io/qzy111/gatewayserver:v11
 
 mvn compile jib:dockerBuild
 
@@ -31,10 +31,14 @@ docker run -itd --name accountsdb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1122 -e MY
 docker run -itd --name cardsdb -p 3307:3306 -e MYSQL_ROOT_PASSWORD=1122 -e MYSQL_DATABASE=cardsdb mysql:latest
 docker run -itd --name loansdb -p 3308:3306 -e MYSQL_ROOT_PASSWORD=1122 -e MYSQL_DATABASE=loansdb mysql:latest
 
+wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-started/loki-config.yaml -O loki-config.yaml
+wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-started/promtail-local-config.yaml -O promtail-local-config.yaml
+wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-started/docker-compose.yaml -O docker-compose.yaml
 
 
+docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.4 start-dev
 
-
+665388075285
 
 
 
