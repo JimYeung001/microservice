@@ -3,12 +3,16 @@ package com.eazy.accounts.service.impl;
 import java.util.Optional;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.function.StreamBridge;
 import org.springframework.stereotype.Service;
 
 import com.eazy.accounts.service.IAccountsService;
 import com.eazy.core.constants.ApplicationConstants;
 import com.eazy.core.dto.AccountsDto;
+import com.eazy.core.dto.AccountsMsgDto;
 import com.eazy.core.dto.CustomerDto;
 import com.eazy.core.entities.accounts.Accounts;
 import com.eazy.core.entities.accounts.Customer;
@@ -25,10 +29,15 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public class AccountsServiceImpl implements IAccountsService {
 
+	private static final Logger logger = LoggerFactory.getLogger(AccountsServiceImpl.class);
+
 	@Autowired
 	private AccountsRepository accountsRepository;
 	@Autowired
 	private CustomerRepository customerRepository;
+
+	@Autowired
+	private final StreamBridge streamBridge;
 
 	@Override
 	public void createAccount(CustomerDto customerDto) {
@@ -39,8 +48,16 @@ public class AccountsServiceImpl implements IAccountsService {
 					"Customer already registered with given mobile number " + customer.getMobileNumber());
 		}
 		Customer savedCustomer = customerRepository.save(customer);
-		accountsRepository.save(createNewAccounts(savedCustomer));
+		Accounts savedAccount = accountsRepository.save(createNewAccounts(savedCustomer));
+		sendCommunication(savedAccount, savedCustomer);
+	}
 
+	private void sendCommunication(Accounts account, Customer customer) {
+		var accountsMsgDto = new AccountsMsgDto(account.getAccountNumber(), customer.getName(), customer.getEmail(),
+				customer.getMobileNumber());
+		logger.info("Sending communication request for the deails: {}", accountsMsgDto);
+		var result = streamBridge.send("sendCommunication-out-0", accountsMsgDto);
+		logger.info("Is the communication request successfully processed? {}", result);
 	}
 
 	private Accounts createNewAccounts(Customer savedCustomer) {

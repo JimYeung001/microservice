@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.eazy.accounts.service.IAccountsService;
 import com.eazy.core.constants.ApplicationConstants;
+import com.eazy.core.dto.AccountsMsgDto;
 import com.eazy.core.dto.ContactInfoDto;
 import com.eazy.core.dto.CustomerDto;
 import com.eazy.core.dto.ErrorResponseDto;
@@ -125,5 +126,9 @@ public class AccountController {
 	}
 	public ResponseEntity<String> getJavaVersionFallback(Throwable throwable) {
 		return ResponseEntity.status(HttpStatus.OK).body("java 17");
+	}
+	
+	public ResponseEntity<AccountsMsgDto> getJavaVersionFallback2(Throwable throwable) {
+		return ResponseEntity.status(HttpStatus.OK).body(new AccountsMsgDto(10L, "b", "c", "d"));
 	}
 }
