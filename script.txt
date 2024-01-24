@@ -9,12 +9,13 @@ docker run -it -d --name adminer -p 8080:8080 --network techbankNet -e ADMINER_D
 
 (HTTP code 500) server error - Ports are not available: exposing port bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.
 
-docker image push docker.io/qzy111/configserver:v12
-docker image push docker.io/qzy111/loans:v12
-docker image push docker.io/qzy111/cards:v12
-docker image push docker.io/qzy111/accounts:v12
-docker image push docker.io/qzy111/eurekaserver:v12
-docker image push docker.io/qzy111/gatewayserver:v12
+docker image push docker.io/qzy111/configserver:v13
+docker image push docker.io/qzy111/loans:v13
+docker image push docker.io/qzy111/cards:v13
+docker image push docker.io/qzy111/accounts:v13
+docker image push docker.io/qzy111/eurekaserver:v13
+docker image push docker.io/qzy111/gatewayserver:v13
+docker image push docker.io/qzy111/message:v13
 
 mvn compile jib:dockerBuild
 
@@ -37,6 +38,12 @@ wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-starte
 
 #latest Keyloak
 docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.4 start-dev
+
+Client ID: eazy-callcenter-cc
+Client authentication : On
+Service accounts roles
+Role name: ACCOUNTS, CARDS, LOANS and sign these roles to : service-account-eazy-callcenter-cc
+and update Postman secretes.
 
 665388075285
 

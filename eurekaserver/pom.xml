@@ -73,7 +73,7 @@
 				<version>3.4.0</version>
 				<configuration>
 					<to>
-						<image>qzy111/${project.name}:v12</image>
+						<image>qzy111/${project.name}:v13</image>
 					</to>
 				</configuration>
 			</plugin>

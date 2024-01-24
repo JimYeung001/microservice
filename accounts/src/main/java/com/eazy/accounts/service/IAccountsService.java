@@ -15,15 +15,14 @@ public interface IAccountsService {
 	 * @return
 	 */
 	public CustomerDto fetchAccount(String mobileNumber);
-	
-	
+
 	/**
 	 * 
 	 * @param customerDto
 	 * @return
 	 */
 	public boolean updateAccount(CustomerDto customerDto);
-	
+
 	/**
 	 * 
 	 * @param mobileNumber
@@ -31,4 +30,10 @@ public interface IAccountsService {
 	 */
 	public boolean deleteAccount(String mobileNumber);
 
+	/**
+	 * 
+	 * @param accountNumber
+	 * @return
+	 */
+	public boolean updateCommunicationStatus(Long accountNumber);
 }
