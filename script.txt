@@ -12,10 +12,10 @@ docker run -it -d --name adminer -p 8080:8080 --network techbankNet -e ADMINER_D
 docker image push docker.io/qzy111/configserver:v13
 docker image push docker.io/qzy111/loans:v13
 docker image push docker.io/qzy111/cards:v13
-docker image push docker.io/qzy111/accounts:v13
+docker image push docker.io/qzy111/accounts:v14
 docker image push docker.io/qzy111/eurekaserver:v13
 docker image push docker.io/qzy111/gatewayserver:v13
-docker image push docker.io/qzy111/message:v13
+docker image push docker.io/qzy111/message:v14
 
 mvn compile jib:dockerBuild
 
