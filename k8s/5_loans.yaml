@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: loans-deployment
+  labels:
+    app: loans
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: loans
+  template:
+    metadata:
+      labels:
+        app: loans
+    spec:
+      containers:
+        - name: loans
+          image: qzy111/loans:v12
+          ports:
+            - containerPort: 8090
+          env:
+            - name: SPRING_APPLICATION_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: LOANS_APPLICATION_NAME
+            - name: SPRING_CONFIG_IMPORT
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: SPRING_CONFIG_IMPORT
+            - name: SPRING_PROFILE_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: SPRING_PROFILE_ACTIVE
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: loans
+spec:
+  selector:
+    app: loans
+  type: LoadBalancer
+  ports:
+    - name: tcp
+      port: 8090
+      targetPort: 8090

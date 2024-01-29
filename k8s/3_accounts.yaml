@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: accounts-deployment
+  labels:
+    app: accounts
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: accounts
+  template:
+    metadata:
+      labels:
+        app: accounts
+    spec:
+      containers:
+        - name: accounts
+          image: qzy111/accounts:v12
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_APPLICATION_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: ACCOUNTS_APPLICATION_NAME
+            - name: SPRING_CONFIG_IMPORT
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: SPRING_CONFIG_IMPORT
+            - name: SPRING_PROFILE_ACTIVE
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: SPRING_PROFILE_ACTIVE
+            - name: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+              valueFrom:
+                configMapKeyRef:
+                  name: eazy-configmap
+                  key: EUREKA_CLIENT_SERVICEURL_DEFAULTZONE
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: accounts
+spec:
+  selector:
+    app: accounts
+  type: ClusterIP
+  ports:
+    - name: tcp
+      port: 8080
+      targetPort: 8080
