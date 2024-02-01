@@ -4,66 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ba145736-8630-412f-aee2-abb349c447a6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/k8s/1_keycloak.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/2_eurekaserver.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/3_accounts.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/4_cards.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/5_loans.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/6_gatewayserver.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/configmap.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/configserver.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/dashboard-adminuser.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/dashboard-rolebinding.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/k8s/secret.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/.bloomcycle.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/.usage-cache.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/.usage.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/loki-data/.usage-cache.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin.bkp/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/buckets/loki-ruler/.usage-cache.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/config/config.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/config/iam/format.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/format.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/pool.bin/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/.minio.sys/tmp/4c997e1b-3464-473e-92ce-79d87e67e465" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/index/index_19731/tenant1/1704844181-compactor-1704840556783-1704841677789-e89d3e70.tsdb.gz/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/index/index_19732/tenant1/1704858561-compactor-1704844910400-1704855584212-c8e89b90.tsdb.gz/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/index/index_19746/1706138116-bcca395c15ed-1706068559550876667.tsdb.gz/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/index/index_19746/tenant1/1706138605-compactor-1706068515825-1706137806148-d8e04bd0.tsdb.gz/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/loki_cluster_seed.json/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/148ff505e96b30c2/18d399bf29b18d39a27921c94ede8d/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/27fd3db14c55bf46/18d399c48f918d3dbc61ee3d068e08/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/280627efa04f1861/18d399c68e018d3dbcd435e3dd7b30/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/2da5a5ad3f4db424/18cf06a8cf818cf06a8d08dc3b8669/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/2da5a5ad3f4db424/18cf0acdf4018cf0acdf4e770b5f5c/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/2da5a5ad3f4db424/18cf14d17f218cf14d19343f4c2555/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/2da5a5ad3f4db424/18d399bb15f18d399bb172ce4a4877/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/5588f96141153c16/18d399d6e3a18d3dbcbe3ee05db01/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/574624f4dfe1d10b/18d399cd70918d3dc46703f1993baf/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/5c33f665590d7bcb/18d399c471c18d3dbcd60839304534/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/6e18aad18efdef3b/18cef3e1aa118cef3fb4caf1610fbb/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/6e18aad18efdef3b/18cf14dadb318cf14fbdd4ad3e54ec/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/6e18aad18efdef3b/18d399cd2aa18d399d95fbea063ece/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/73cf385659e01dcf/18cef3d97f718cef3d997b49b58039/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/73cf385659e01dcf/18cf06a70ef18cf06a70f08495b2df/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/73cf385659e01dcf/18cf0ace99118cf0ace9949976a613/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/73cf385659e01dcf/18cf14cf25018cf14cf25258118f0a/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/73cf385659e01dcf/18d396f8d3218d396f8d34cf29925c/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/73cf385659e01dcf/18d399bda9e18d399bdac87c514528/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/9c348253b7043eb3/18d399b9bf118d399c8c99dc54067e/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/d4919e95938345cf/18d399d74ba18d3dbcc8f77403e710/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/dd33d4e3f1b046b0/18d399c048318d3dbc7f34a4acd770/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/e5a61195d0e70f0b/18cef3d965218cef3f966821c8f765/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/e5a61195d0e70f0b/18cf06a8b7e18cf07b8bdd22ae2a18/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/e5a61195d0e70f0b/18cf14ce33118cf14f9ec13be843f6/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/e5a61195d0e70f0b/18d399bd3c718d399db5c51afc66e1/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.data/minio/loki-data/tenant1/edd58b817ef17b7c/18d399cdaec18d3dbce54415eef116/xl.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
+    <list default="true" id="ba145736-8630-412f-aee2-abb349c447a6" name="Changes" comment="update k8s">
+      <change afterPath="$PROJECT_DIR$/helm/eazy-common/templates/deployment.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/helm/eazy-common/templates/service.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gatewayserver/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/script.txt" beforeDir="false" afterPath="$PROJECT_DIR$/script.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -87,7 +36,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Application.AccountsApplication.executor": "Debug",
+    "Application.CardsApplication.executor": "Run",
+    "Application.ConfigserverApplication.executor": "Run",
+    "Application.EurekaserverApplication.executor": "Run",
+    "Application.GatewayserverApplication.executor": "Run",
+    "Application.LoansApplication.executor": "Run",
+    "Application.MessageApplication.executor": "Debug",
     "Maven.Microservice [clean].executor": "Run",
     "Maven.Microservice [install].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -110,6 +67,82 @@
       <recent name="D:\projects\microservice\k8s" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.GatewayserverApplication">
+    <configuration name="AccountsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eazy.accounts.AccountsApplication" />
+      <module name="accounts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eazy.accounts.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CardsApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eazy.cards.CardsApplication" />
+      <module name="cards" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eazy.cards.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GatewayserverApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eazy.gatewayserver.GatewayserverApplication" />
+      <module name="gatewayserver" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eazy.gatewayserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoansApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eazy.loans.LoansApplication" />
+      <module name="loans" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eazy.loans.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MessageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.eazy.message.MessageApplication" />
+      <module name="message" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.eazy.message.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GatewayserverApplication" />
+        <item itemvalue="Application.MessageApplication" />
+        <item itemvalue="Application.LoansApplication" />
+        <item itemvalue="Application.CardsApplication" />
+        <item itemvalue="Application.AccountsApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -126,6 +159,15 @@
       <option name="presentableId" value="Default" />
       <updated>1706395293379</updated>
     </task>
+    <task id="LOCAL-00001" summary="update k8s">
+      <option name="closed" value="true" />
+      <created>1706498176622</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1706498176622</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -144,5 +186,20 @@
     <option featureType="dependencySupport" implementationName="java:jakarta.ws.rs:jakarta.ws.rs-api" />
     <option featureType="dependencySupport" implementationName="java:org.springframework:spring-messaging" />
     <option featureType="dependencySupport" implementationName="java:org.springframework.boot:spring-boot" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update k8s" />
+    <option name="LAST_COMMIT_MESSAGE" value="update k8s" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/accounts/src/main/java/com/eazy/accounts/service/impl/AccountsServiceImpl.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,0 +1,27 @@
+dependencies:
+- name: eazy-common
+  repository: file://../../eazy-common
+  version: 0.1.0
+- name: configserver
+  repository: file://../../eazy-services/configserver
+  version: 0.1.0
+- name: eurekaserver
+  repository: file://../../eazy-services/eurekaserver
+  version: 0.1.0
+- name: accounts
+  repository: file://../../eazy-services/accounts
+  version: 0.1.0
+- name: cards
+  repository: file://../../eazy-services/cards
+  version: 0.1.0
+- name: loans
+  repository: file://../../eazy-services/loans
+  version: 0.1.0
+- name: gatewayserver
+  repository: file://../../eazy-services/gatewayserver
+  version: 0.1.0
+- name: message
+  repository: file://../../eazy-services/message
+  version: 0.1.0
+digest: sha256:5dd882e3f42df040fe1a3ec8ea560a0e5f766026c1e264623c5beb781a5aa492
+generated: "2024-01-30T19:06:42.4429124-05:00"

@@ -60,4 +60,16 @@ kubectl -n kubernetes-dashboard create token admin-user
 #long time token: 
 after create Secret.yaml file: 
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
+#Run kubernetes: end
+
+#Create helm files: 
+helm create eazy-common
+
+
+
+git config --global user.email "qzy114@gmail.com"
+git config --global user.name "Jim"
+
+
+
 

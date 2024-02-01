@@ -1,0 +1,6 @@
+dependencies:
+- name: eazy-common
+  repository: file://../../eazy-common
+  version: 0.1.0
+digest: sha256:191b6afa554bb735db018148f64bc35723303cfcaf4b44d35e56486ed1f8ba05
+generated: "2024-01-30T18:32:48.5754225-05:00"
