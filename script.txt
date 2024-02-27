@@ -36,7 +36,7 @@ wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-starte
 wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-started/promtail-local-config.yaml -O promtail-local-config.yaml
 wget https://raw.githubusercontent.com/grafana/loki/main/examples/getting-started/docker-compose.yaml -O docker-compose.yaml
 
-#latest Keyloak
+#latest keyloaksa
 docker run -d -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:23.0.4 start-dev
 
 Client ID: eazy-callcenter-cc
@@ -45,7 +45,7 @@ Service accounts roles
 Role name: ACCOUNTS, CARDS, LOANS and sign these roles to : service-account-eazy-callcenter-cc
 and update Postman secretes.
 
-665388075285
+#665388075285
 
 
 # latest RabbitMQ 3.12
@@ -72,4 +72,7 @@ git config --global user.name "Jim"
 
 
 
+404 Not Found from GET http://keycloak.default.svc.cluster.local:80/realm/master/protocol/openid-connect/certs
 
+
+  
